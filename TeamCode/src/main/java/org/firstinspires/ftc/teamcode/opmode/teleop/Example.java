@@ -43,8 +43,6 @@ public class Example extends CommandOpMode {
         // Initialize Subsystems
         drive = new DriveSubsystem(Constants.create(hardwareMap), Pose.zero(), telemetry);
 
-
-
         DriveCommand driveCommand = new DriveCommand(drive,
                 () -> -driver1.getLeftX() * driveMult,
                 () -> driver1.getLeftY() * driveMult,

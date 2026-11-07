@@ -18,20 +18,25 @@ public class States {
     }
 
     public enum RobotRunMode {
-        Auto(true, true), // Starts Auto by setting new alliance and pose, resetting when starting
-        TeleOp(true, false), // Starts TeleOp by reading old pose and alliance, not resetting
-        Utility( false, true); // Starts Utility without using saved pose and resetting values
-        private final boolean savePose, reset;
-        RobotRunMode(boolean storePose, boolean reset) {
+        Auto(true, true, true), // Starts Auto by setting new alliance and pose, resetting when starting
+        TeleOp(true, false, false), // Starts TeleOp by reading old pose and alliance, not resetting
+        Utility( false, true, true); // Starts Utility without using saved pose and resetting values
+        private final boolean savePose, resetPose, poweredInit;
+        RobotRunMode(boolean storePose, boolean resetPose, boolean poweredInit) {
             this.savePose = storePose;
-            this.reset = reset;
+            this.resetPose = resetPose;
+            this.poweredInit = poweredInit;
         }
         public boolean poseSaved() {
             return this.savePose;
         }
 
         public boolean reset() {
-            return this.reset();
+            return this.resetPose;
+        }
+
+        public boolean initMovement() {
+            return this.poweredInit;
         }
 
     }

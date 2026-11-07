@@ -20,7 +20,11 @@ public class DriveSubsystem extends SubsystemBase {
     public DriveSubsystem(Follower follower, Telemetry telemetry) {
         this.follower = follower;
         this.telemetry = telemetry;
-        follower.setPose(new Pose(0,0,0));
+        follower.setPose(Pose.zero());
+    }
+
+    public void init() {
+        //
     }
 
     @Override

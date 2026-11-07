@@ -64,7 +64,6 @@ public class DriveCommand extends CommandBase {
             );
         } else {
             drive.follower.manual(powers);
-
         }
         drive.follower.update();
     }

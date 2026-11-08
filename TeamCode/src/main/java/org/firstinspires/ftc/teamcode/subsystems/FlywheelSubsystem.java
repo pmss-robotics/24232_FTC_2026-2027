@@ -55,10 +55,10 @@ public class FlywheelSubsystem extends SubsystemBase {
         if (initialized) {
             flywheels.setFeedforwardCoefficients(kS, kV);
             flywheels.setVeloCoefficients(kP, kI, kD);
-            flywheels.set(setpoint);
+            flywheels.set(7d/15d*setpoint);
 
-            telemetry.addData("Setpoint (tick/s)", setpoint);
-            telemetry.addData("Velocity (tick/s)", flywheels.getVelocity());
+            telemetry.addData("Setpoint (RPM)", 15d/7d*setpoint);
+            telemetry.addData("Velocity (RPM)", 15d/7d*flywheels.getVelocity());
             telemetry.addData("Raw Power (V)", Robot.getInstance().getVoltage() * flywheels.getRawPower());
         }
     }

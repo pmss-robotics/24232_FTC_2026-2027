@@ -59,7 +59,7 @@ dependencies {
 
     implementation('dev.frozenmilk.sinister:Sloth:0.3.2') // Sloth
     implementation('com.acmerobotics.slothboard:dashboard:0.3.2+0.6.0') // FTC Dashboard
-    implementation('com.skeletonarmyftc.marrow:core:1.2.3') // marrow
+    implementation('com.skeletonarmyftc.marrow:core:1.2.5') // marrow
 
     implementation("org.solverslib:core:0.3.6") // core
     implementation("org.solverslib:pedroPathing:0.3.6") // pedroPathing
